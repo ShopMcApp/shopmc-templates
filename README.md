@@ -1,0 +1,2 @@
+# templates
+ShopMC templates
