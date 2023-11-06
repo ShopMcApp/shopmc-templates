@@ -9,7 +9,7 @@ app.set('view engine', 'ejs');
 
 // index page
 app.get('/basic', function (req, res) {
-    res.render('basic', JSON.parse(fs.readFileSync('./shop.json', 'utf8')));
+    res.render('basic', JSON.parse(fs.readFileSync('./data.json', 'utf8')));
 });
 
 app.listen(8080);
