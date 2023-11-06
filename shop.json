@@ -1,0 +1,118 @@
+{
+    "config": {
+        "products": [
+            {
+                "id": "cd923184-f6db-46cd-82ca-de753444dbcd",
+                "name": "super produkt",
+                "icon": "https://shopmc.app/server.png",
+                "server": "4d8b0467-584e-418b-8264-c60d64d5bbd9",
+                "description": "",
+                "commands": "",
+                "price": 100,
+                "sms": false,
+                "sms_number": 71480,
+                "adjustable": false
+            }
+        ],
+        "servers": [
+            {
+                "name": "survival xd",
+                "ip": "aresmc.pl",
+                "icon": "https://shopmc.app/server.png",
+                "commands": false,
+                "type": "rcon",
+                "rcon_ip": "",
+                "rcon_password": "",
+                "pterodactyl_id": "",
+                "pterodactyl_key": "",
+                "id": "4d8b0467-584e-418b-8264-c60d64d5bbd9"
+            }
+        ],
+        "currency": "pln",
+        "type": "stripe",
+        "template": "https://raw.githubusercontent.com/ShopMcApp/templates/main/templates/basic.ejs",
+        "webhook_discord": false,
+        "name": "GamesMC",
+        "icon": "/server.png",
+        "description": "super opis",
+        "terms": "regulamin"
+    },
+    "orders": [
+        {
+            "id": 7,
+            "customer": "cus_OIXJ71vJtGM2wt",
+            "nick": "MJQ",
+            "timestamp": "2023-11-04T09:49:03.601Z",
+            "product": "10cf0ecc-5078-4c38-b805-492243643f83",
+            "price": 1000,
+            "currency": "pln",
+            "quantity": 1,
+            "variant": "stripe"
+        },
+        {
+            "id": 6,
+            "customer": "cus_OIXJ71vJtGM2wt",
+            "nick": "MJQQ",
+            "timestamp": "2023-11-04T09:36:39.335Z",
+            "product": "10cf0ecc-5078-4c38-b805-492243643f83",
+            "price": 1000,
+            "currency": "pln",
+            "quantity": 1,
+            "variant": "stripe"
+        },
+        {
+            "id": 5,
+            "customer": "cus_OIXJ71vJtGM2wt",
+            "nick": "Dream",
+            "timestamp": "2023-11-04T09:27:30.434Z",
+            "product": "10cf0ecc-5078-4c38-b805-492243643f83",
+            "price": 1000,
+            "currency": "pln",
+            "quantity": 1,
+            "variant": "stripe"
+        },
+        {
+            "id": 4,
+            "customer": "cus_OIXJ71vJtGM2wt",
+            "nick": "MJQ",
+            "timestamp": "2023-11-04T09:00:41.379Z",
+            "product": "10cf0ecc-5078-4c38-b805-492243643f83",
+            "price": 10,
+            "currency": "pln",
+            "quantity": 1,
+            "variant": "stripe"
+        },
+        {
+            "id": 2,
+            "customer": "cus_OIXJ71vJtGM2wt",
+            "nick": "MJQ",
+            "timestamp": "2023-11-03T14:46:43.119Z",
+            "product": "342e0dd1-c9ce-4f47-8862-c5baefe65043",
+            "price": 222,
+            "currency": "pln",
+            "quantity": 1,
+            "variant": "pbl"
+        },
+        {
+            "id": 3,
+            "customer": "cus_OIXJ71vJtGM2wt",
+            "nick": "MJQ",
+            "timestamp": "2023-11-01T14:46:43.119Z",
+            "product": "342e0dd1-c9ce-4f47-8862-c5baefe65043",
+            "price": 222,
+            "currency": "pln",
+            "quantity": 2,
+            "variant": "pbl"
+        }
+    ],
+    "vouchers": [
+        {
+            "id": "promo_1O8g0aJv2luoG83KWzum0N16",
+            "code": "FP7VDBYN",
+            "product": "10cf0ecc-5078-4c38-b805-492243643f83",
+            "quantity": "1",
+            "active": true
+        }
+    ],
+    "customer": "cus_OIXJ71vJtGM2wt"
+}
