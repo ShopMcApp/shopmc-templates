@@ -1,6 +1,6 @@
 [
     {
         "name": "Basic",
-        "url": "https://raw.githubusercontent.com/ShopMcApp/templates/main/views/basic.ejs"
+        "value": "https://raw.githubusercontent.com/ShopMcApp/templates/main/views/basic.ejs"
     }
 ]
