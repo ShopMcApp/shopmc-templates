@@ -4,24 +4,24 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* width */
-::-webkit-scrollbar {
-  width: 6px;
-}
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: rgb(23,23,23);
-}
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: rgb(23, 23, 23);
+        }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: rgb(21,128,61);
-}
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: rgb(21, 128, 61);
+        }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: rgb(21,128,61);
-}
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgb(21, 128, 61);
+        }
     </style>
 </head>
 
@@ -62,25 +62,39 @@
             </div>
             <div class="w-full max-w-sm flex flex-col gap-4 items-center">
                 <button class="rounded-sm bg-green-700 p-2 px-10 text-lg uppercase">Voucher</button>
-                <div class="text-2xl font-bold mt-10">
+                <div class="text-2xl font-bold mt-6">
                     OSTATNIE ZAKUPY
                 </div>
                 <% for(let order of orders) { %>
-                <div class="bg-neutral-900 p-4 w-full h-fit flex gap-4 items-center">
-                    <img src="https://shopmc.app/server.png" class="w-16 h-16 ml-12" />
-                    <div>
-                        <div class="font-extrabold text-lg">
-                            xd
-                        </div>
-                        <div class="text-xs">
-                            <%= order.nick %>
-                        </div>
-                        <div class="text-xs">
-                            31.10 20:00
+                    <div class="bg-neutral-900 p-4 w-full h-fit flex gap-4 items-center">
+                        <img src="https://shopmc.app/server.png" class="w-16 h-16 ml-12" />
+                        <div>
+                            <div class="font-extrabold text-lg">
+                                xd
+                            </div>
+                            <div class="text-xs">
+                                <%= order.nick %>
+                            </div>
+                            <div class="text-xs">
+                                31.10 20:00
+                            </div>
                         </div>
                     </div>
+                    <% } %>
+            </div>
+        </div>
+        <div class="w-full bg-neutral-900 flex justify-center mt-6 text-lg">
+            <div
+                class="max-w-screen-2xl px-4 w-full py-10 text-gray-500 font-bold flex justify-between flex-col md:flex-row">
+                <div>
+                    <%= config.name %> nie jest w żaden sposób powiązany z Mojang AB.
                 </div>
-                <% } %>
+                <div>
+                    Sklep zasila
+                    <a href="https://shopmc.app" target="_blank" class="text-green-700">
+                        ShopMC
+                    </a>
+                </div>
             </div>
         </div>
     </div>
