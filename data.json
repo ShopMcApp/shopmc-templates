@@ -12,6 +12,30 @@
                 "sms": false,
                 "sms_number": 71480,
                 "adjustable": false
+            },
+            {
+                "id": "cd923184-f6db-46cd-82ca-de753444dbcd",
+                "name": "super produkt",
+                "icon": "https://shopmc.app/server.png",
+                "server": "4d8b0467-584e-418b-8264-c60d64d5bbd9",
+                "description": "",
+                "commands": "",
+                "price": 100,
+                "sms": false,
+                "sms_number": 71480,
+                "adjustable": false
+            },
+            {
+                "id": "cd923184-f6db-46cd-82ca-de753444dbcd",
+                "name": "super produkt",
+                "icon": "https://shopmc.app/server.png",
+                "server": "4d8b0467-584e-418b-8264-c60d64d5bbd9",
+                "description": "",
+                "commands": "",
+                "price": 100,
+                "sms": false,
+                "sms_number": 71480,
+                "adjustable": false
             }
         ],
         "servers": [
