@@ -39,14 +39,16 @@
     <div class="min-h-screen bg-neutral-950 text-gray-300 flex flex-col items-center">
         <div class="w-full max-w-screen-2xl px-6 py-12 flex">
             <div class="flex-1 text-3xl font-extrabold">
-                <%= config.name %>
+                <a href="#">
+                    <%= config.name %>
+                </a>
             </div>
             <div class="gap-8 uppercase hidden md:flex">
-                <a href="#" class="text-lg font-bold">Sklep</a>
+                <a href="#" class="text-lg font-bold hover:text-green-700">Sklep</a>
                 <% if(config.terms){ %>
-                <a href="#terms" class="text-lg font-bold">Regulamin</a>
+                <a href="#terms" class="text-lg font-bold hover:text-green-700">Regulamin</a>
                 <% } %>
-                <a href="#" class="text-lg font-bold">Voucher</a>
+                <a href="#" class="text-lg font-bold hover:text-green-700">Voucher</a>
                 <% if(config.discord){ %>
                 <a href="<%= config.discord_url %>" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
