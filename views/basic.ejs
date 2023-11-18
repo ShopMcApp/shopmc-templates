@@ -4,6 +4,9 @@
     <title>Sklep serwera <%= config.name %></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <% if(config.icon){ %>
+    <link rel="icon" type="image/x-icon" href="<%= config.icon %>">
+    <% } %>
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <style>
         /* width */

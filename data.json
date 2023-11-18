@@ -61,7 +61,7 @@
         "template": "https://raw.githubusercontent.com/ShopMcApp/templates/main/templates/basic.ejs",
         "webhook_discord": false,
         "name": "GamesMC",
-        "icon": "/server.png",
+        "icon": "https://shopmc.app/server.png",
         "description": "super opis",
         "terms": "<h1>Regulamin serwera</h1><p>proszę go przestrzegać!</p><i>xd</i>"
     },
