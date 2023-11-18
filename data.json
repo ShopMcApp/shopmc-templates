@@ -63,7 +63,7 @@
         "name": "GamesMC",
         "icon": "/server.png",
         "description": "super opis",
-        "terms": "regulamin"
+        "terms": "<h1>Regulamin serwera</h1><p>proszę go przestrzegać!</p><i>xd</i>"
     },
     "orders": [
         {

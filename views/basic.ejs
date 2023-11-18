@@ -4,7 +4,7 @@
     <title>Sklep serwera <%= config.name %></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <style>
         /* width */
         ::-webkit-scrollbar {
@@ -105,8 +105,8 @@
                 <% } %>
             </div>
         </div>
-        <div id="terms" class="hidden">
-            <%= config.terms %>
+        <div id="terms" class="hidden prose prose-invert w-full">
+            <%- config.terms %>
         </div>
     </div>
     <div class="w-full bg-neutral-900 flex justify-center text-lg">
