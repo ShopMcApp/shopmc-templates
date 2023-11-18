@@ -37,7 +37,7 @@
             <div class="gap-8 uppercase hidden md:flex">
                 <a href="#" class="text-lg font-bold">Sklep</a>
                 <% if(config.terms){ %>
-                <a href="#" class="text-lg font-bold">Regulamin</a>
+                <a href="#terms" class="text-lg font-bold">Regulamin</a>
                 <% } %>
                 <a href="#" class="text-lg font-bold">Voucher</a>
                 <% if(config.discord){ %>
@@ -58,7 +58,8 @@
                 <% }; %>
             </div>
         </div>
-        <div class="max-w-screen-2xl w-full p-8 md:p-12 gap-5 flex flex-col lg:flex-row items-center lg:items-start">
+        <div id="main"
+            class="max-w-screen-2xl w-full p-8 md:p-12 gap-5 flex flex-col lg:flex-row items-center lg:items-start">
             <div class="w-full grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3 h-fit mb-10">
                 <% for(let product of config.products) { %>
                 <div class="flex flex-col items-center bg-neutral-900 p-5 py-10">
@@ -104,6 +105,9 @@
                 <% } %>
             </div>
         </div>
+        <div id="terms" class="hidden">
+            <%= config.terms %>
+        </div>
     </div>
     <div class="w-full bg-neutral-900 flex justify-center text-lg">
         <div
@@ -119,6 +123,21 @@
             </div>
         </div>
     </div>
+    <script>
+        const update = () => {
+            if (window.location.hash == '#terms') {
+                document.getElementById('main').classList.add('hidden')
+                document.getElementById('terms').classList.remove('hidden')
+            } else {
+                document.getElementById('main').classList.remove('hidden')
+                document.getElementById('terms').classList.add('hidden')
+            }
+        }
+        update()
+        window.addEventListener('hashchange', (e) => {
+            update()
+        })
+    </script>
 </body>
 
 </html>
