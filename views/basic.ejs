@@ -36,44 +36,45 @@
                 <a href="#" class="text-xl font-bold">Regulamin</a>
                 <a href="#" class="text-xl font-bold">Voucher</a>
                 <% if(config.discord){ %>
-                    <a href="<%= config.discord_url %>">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                            <path fill="currentColor"
-                                d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z" />
-                        </svg>
-                    </a>
-                    <% }; if(config.facebook){ %>
-                        <a href="<%= config.facebook_url %>">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                                <path fill="currentColor"
-                                    d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" />
-                            </svg>
-                        </a>
-                        <% }; %>
+                <a href="<%= config.discord_url %>" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z" />
+                    </svg>
+                </a>
+                <% } %>
+                <% if(config.facebook){ %>
+                <a href="<%= config.facebook_url %>" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" />
+                    </svg>
+                </a>
+                <% }; %>
             </div>
         </div>
         <div class="max-w-screen-2xl w-full p-8 md:p-12 gap-5 flex flex-col lg:flex-row items-center lg:items-start">
             <div class="w-full grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3 h-fit mb-10">
                 <% for(let product of config.products) { %>
-                    <div class="flex flex-col items-center bg-neutral-900 p-5 py-10">
-                        <img src="<%= product.icon %>" class="w-32 h-32 mb-4" />
-                        <div class="mb-2 text-2xl font-bold">
-                            <%= product.name %>
-                        </div>
-                        <div class="mb-3 text-md h-full">
-                            <%= product.description %>
-                        </div>
-                        <div class="flex items-center gap-4 flex-col">
-                            <div class="text-md text-green-700">
-                                <%= product.price %> PLN
-                            </div>
-                            <a class="rounded-sm bg-green-700 p-2 px-12 text-lg uppercase"
-                                href="/checkout/<%= customer %>/<%= product.id %>">
-                                Kup teraz
-                            </a>
-                        </div>
+                <div class="flex flex-col items-center bg-neutral-900 p-5 py-10">
+                    <img src="<%= product.icon %>" class="w-32 h-32 mb-4" />
+                    <div class="mb-2 text-2xl font-bold">
+                        <%= product.name %>
                     </div>
-                    <% } %>
+                    <div class="mb-3 text-md h-full">
+                        <%= product.description %>
+                    </div>
+                    <div class="flex items-center gap-4 flex-col">
+                        <div class="text-md text-green-700">
+                            <%= product.price %> PLN
+                        </div>
+                        <a class="rounded-sm bg-green-700 p-2 px-12 text-lg uppercase"
+                            href="/checkout/<%= customer %>/<%= product.id %>">
+                            Kup teraz
+                        </a>
+                    </div>
+                </div>
+                <% } %>
             </div>
             <div class="w-full lg:max-w-xs flex flex-col gap-5 items-center mb-6">
                 <button class="rounded-sm bg-green-700 p-2 px-10 text-lg uppercase">Voucher</button>
@@ -81,21 +82,21 @@
                     OSTATNIE ZAKUPY
                 </div>
                 <% for(let order of orders) { %>
-                    <div class="bg-neutral-900 p-4 w-full h-fit flex gap-4 items-center">
-                        <img src="https://shopmc.app/server.png" class="w-16 h-16 ml-6" />
-                        <div>
-                            <div class="font-extrabold text-lg">
-                                xd
-                            </div>
-                            <div class="text-xs">
-                                <%= order.nick %>
-                            </div>
-                            <div class="text-xs">
-                                31.10 20:00
-                            </div>
+                <div class="bg-neutral-900 p-4 w-full h-fit flex gap-4 items-center">
+                    <img src="https://shopmc.app/server.png" class="w-16 h-16 ml-6" />
+                    <div>
+                        <div class="font-extrabold text-lg">
+                            xd
+                        </div>
+                        <div class="text-xs">
+                            <%= order.nick %>
+                        </div>
+                        <div class="text-xs">
+                            31.10 20:00
                         </div>
                     </div>
-                    <% } %>
+                </div>
+                <% } %>
             </div>
         </div>
     </div>
