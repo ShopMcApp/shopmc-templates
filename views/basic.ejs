@@ -35,7 +35,9 @@
             </div>
             <div class="gap-8 uppercase hidden md:flex">
                 <a href="#" class="text-xl font-bold">Sklep</a>
+                <% if(config.terms){ %>
                 <a href="#" class="text-xl font-bold">Regulamin</a>
+                <% } %>
                 <a href="#" class="text-xl font-bold">Voucher</a>
                 <% if(config.discord){ %>
                 <a href="<%= config.discord_url %>" target="_blank">
