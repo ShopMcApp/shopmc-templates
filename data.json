@@ -52,6 +52,10 @@
                 "id": "4d8b0467-584e-418b-8264-c60d64d5bbd9"
             }
         ],
+        "facebook": true,
+        "facebook_url": "https://facebook.com/ShopMcApp",
+        "discord": true,
+        "discord_url": "https://discord.gg/Nx28v3yAER",
         "currency": "pln",
         "type": "stripe",
         "template": "https://raw.githubusercontent.com/ShopMcApp/templates/main/templates/basic.ejs",

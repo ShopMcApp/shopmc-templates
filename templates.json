@@ -1,10 +1,10 @@
 [
     {
         "name": "Basic",
-        "value": "https://raw.githubusercontent.com/ShopMcApp/templates/main/views/basic.ejs"
+        "value": "https://templates.shopmc.app/views/basic.ejs"
     },
     {
         "name": "Basic2",
-        "value": "https://raw.githubusercontent.com/ShopMcApp/templates/main/views/basic.ejs"
+        "value": "https://templates.shopmc.app/views/basic.ejs"
     }
 ]
