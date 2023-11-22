@@ -36,7 +36,7 @@
 </head>
 
 <body>
-    <div class="min-h-screen bg-neutral-950 text-gray-300 flex flex-col items-center">
+    <div class="min-h-screen pb-6 bg-neutral-950 text-gray-300 flex flex-col items-center">
         <div class="w-full max-w-screen-2xl px-6 py-12 flex">
             <div class="flex-1 text-3xl font-extrabold">
                 <a href="#">
@@ -121,9 +121,9 @@
             Voucher
         </div>
     </div>
-    <div class="w-full bg-neutral-900 flex justify-center text-lg">
+    <div class="w-full bg-neutral-900 flex justify-center text-medium">
         <div
-            class="text-center max-w-screen-2xl px-6 w-full py-10 text-gray-500 flex justify-between flex-col md:flex-row items-center">
+            class="text-center max-w-screen-2xl px-6 w-full py-10 text-gray-400 flex justify-between flex-col md:flex-row items-center">
             <div>
                 <%= config.name %> nie jest w żaden sposób powiązany z Mojang AB.
             </div>
@@ -149,7 +149,7 @@
                 document.getElementById('main').classList.remove('hidden')
                 document.getElementById('terms').classList.add('hidden')
                 document.getElementById('voucher').classList.add('hidden')
-                
+
             }
         }
         update()
