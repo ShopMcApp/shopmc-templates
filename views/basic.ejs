@@ -63,6 +63,14 @@
                     </svg>
                 </a>
                 <% }; %>
+                <% if(config.tiktok){ %>
+                <a href="<%= config.tiktok_url %>" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z" />
+                    </svg>
+                </a>
+                <% }; %>
             </div>
         </div>
         <div id="main"
@@ -112,7 +120,8 @@
                 <% } %>
             </div>
         </div>
-        <div id="terms" class="hidden bg-[#1d1d1d] m-12 md:p-12 p-8 prose max-w-screen-md prose-invert w-full rounded-md">
+        <div id="terms"
+            class="hidden bg-[#1d1d1d] m-12 md:p-12 p-8 prose max-w-screen-md prose-invert w-full rounded-md">
             <%- terms %>
         </div>
         <div id="voucher" class="hidden w-full max-w-lg mt-12">
@@ -121,14 +130,16 @@
                 Nick z gry
             </div>
             <div class="flex flex-col md:flex-row gap-4">
-                <input type="text" id="voucher-nick" class="rounded-md bg-[#1d1d1d] p-2 px-4 text-lg w-full" placeholder="Wpisz nick..."/>
+                <input type="text" id="voucher-nick" class="rounded-md bg-[#1d1d1d] p-2 px-4 text-lg w-full"
+                    placeholder="Wpisz nick..." />
 
             </div>
             <div class="text-xl font-bold mt-6 mb-1">
                 Kod vouchera
             </div>
             <div class="flex flex-col md:flex-row gap-4">
-                <input type="text" id="voucher-code" class="rounded-md bg-[#1d1d1d] p-2 px-4 text-lg w-full" placeholder="Wpisz kod..." />
+                <input type="text" id="voucher-code" class="rounded-md bg-[#1d1d1d] p-2 px-4 text-lg w-full"
+                    placeholder="Wpisz kod..." />
             </div>
             <button class="rounded-md bg-[#198754] p-2 px-10 text-lg uppercase w-full mt-6">Zrealizuj</button>
 
