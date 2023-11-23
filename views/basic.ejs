@@ -36,7 +36,7 @@
 </head>
 
 <body>
-    <div class="min-h-screen pb-6 bg-neutral-950 text-gray-300 flex flex-col items-center">
+    <div class="min-h-screen pb-6 bg-[#121212] text-gray-300 flex flex-col items-center">
         <div class="w-full max-w-screen-2xl px-6 py-12 flex">
             <div class="flex-1 text-3xl font-extrabold">
                 <a href="#">
@@ -69,7 +69,7 @@
             class="max-w-screen-2xl w-full p-8 md:p-12 gap-5 flex flex-col lg:flex-row items-center lg:items-start">
             <div class="w-full grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3 h-fit mb-10">
                 <% for(let product of config.products) { %>
-                <div class="flex flex-col items-center bg-neutral-900 p-5 py-10">
+                <div class="flex flex-col items-center bg-[#1d1d1d] p-5 py-10">
                     <img src="<%= product.icon %>" class="w-32 h-32 mb-4" />
                     <div class="mb-2 text-2xl font-bold text-center">
                         <%= product.name %>
@@ -95,7 +95,7 @@
                     OSTATNIE ZAKUPY
                 </div>
                 <% for(let order of orders) { %>
-                <div class="bg-neutral-900 p-4 w-full h-fit flex gap-4 items-center">
+                <div class="bg-[#1d1d1d] p-4 w-full h-fit flex gap-4 items-center">
                     <img src="https://minotar.net/avatar/<%= order.nick %>/48" class="w-12 h-12 ml-6 my-auto" />
                     <div>
                         <div class="font-extrabold text-md">
@@ -112,14 +112,14 @@
                 <% } %>
             </div>
         </div>
-        <div id="terms" class="hidden prose max-w-screen-lg prose-invert w-full px-6">
+        <div id="terms" class="hidden bg-[#1d1d1d] md:p-12 p-8 prose max-w-screen-md prose-invert w-full">
             <%- terms %>
         </div>
         <div id="voucher" class="hidden">
             Voucher
         </div>
     </div>
-    <div class="w-full bg-neutral-900 flex justify-center text-medium">
+    <div class="w-full bg-[#1d1d1d] flex justify-center text-medium">
         <div
             class="text-center max-w-screen-2xl px-6 w-full py-10 text-gray-400 flex justify-between flex-col md:flex-row items-center">
             <div>
