@@ -102,7 +102,7 @@
                 <div class="text-2xl font-bold mt-6">
                     OSTATNIE ZAKUPY
                 </div>
-                <% for(let order of orders) { %>
+                <% for(let order of orders.slice(0,5)) { %>
                 <div class="bg-[#1d1d1d] p-4 w-full h-fit flex gap-4 items-center rounded-md">
                     <img src="https://minotar.net/avatar/<%= order.nick %>/48" class="w-12 h-12 ml-6 my-auto" />
                     <div>
