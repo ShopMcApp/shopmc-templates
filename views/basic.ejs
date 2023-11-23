@@ -115,21 +115,20 @@
         <div id="terms" class="hidden bg-[#1d1d1d] m-12 md:p-12 p-8 prose max-w-screen-md prose-invert w-full rounded-md">
             <%- terms %>
         </div>
-        <div id="voucher" class="hidden w-full max-w-lg">
+        <div id="voucher" class="hidden w-full max-w-lg mt-12">
             <div class="text-3xl font-bold uppercase">Zrealizuj voucher</div>
-            <div class="text-xl font-bold mt-6 mb-1">
-                Kod vouchera
-            </div>
-            <div class="flex flex-col md:flex-row gap-4">
-                <input type="text" id="voucher-code" class="rounded-md bg-[#1d1d1d] p-2 px-4 text-lg uppercase w-full" />
-            </div>
-            <!-- Nick z gry -->
             <div class="text-xl font-bold mt-6 mb-1">
                 Nick z gry
             </div>
             <div class="flex flex-col md:flex-row gap-4">
-                <input type="text" id="voucher-nick" class="rounded-md bg-[#1d1d1d] p-2 px-4 text-lg uppercase w-full" />
+                <input type="text" id="voucher-nick" class="rounded-md bg-[#1d1d1d] p-2 px-4 text-lg w-full" placeholder="Wpisz nick..."/>
 
+            </div>
+            <div class="text-xl font-bold mt-6 mb-1">
+                Kod vouchera
+            </div>
+            <div class="flex flex-col md:flex-row gap-4">
+                <input type="text" id="voucher-code" class="rounded-md bg-[#1d1d1d] p-2 px-4 text-lg w-full" placeholder="Wpisz kod..." />
             </div>
             <button class="rounded-md bg-green-700 p-2 px-10 text-lg uppercase w-full mt-6">Zrealizuj</button>
 
