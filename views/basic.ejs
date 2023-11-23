@@ -44,9 +44,9 @@
                 </a>
             </div>
             <div class="gap-8 uppercase hidden md:flex">
-                <a href="#" class="text-lg font-bold hover:text-green-700">Sklep</a>
-                <a href="#terms" class="text-lg font-bold hover:text-green-700">Regulamin</a>
-                <a href="#voucher" class="text-lg font-bold hover:text-green-700">Voucher</a>
+                <a href="#" class="text-lg font-bold hover:text-[#198754]">Sklep</a>
+                <a href="#terms" class="text-lg font-bold hover:text-[#198754]">Regulamin</a>
+                <a href="#voucher" class="text-lg font-bold hover:text-[#198754]">Voucher</a>
                 <% if(config.discord){ %>
                 <a href="<%= config.discord_url %>" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
@@ -78,10 +78,10 @@
                         <%= product.description %>
                     </div>
                     <div class="flex items-center gap-4 flex-col">
-                        <div class="text-xl text-green-700 font-bold">
+                        <div class="text-xl text-[#198754] font-bold">
                             <%= product.price %> PLN
                         </div>
-                        <a class="rounded-md bg-green-700 p-2 px-12 text-lg uppercase"
+                        <a class="rounded-md bg-[#198754] p-2 px-12 text-lg uppercase"
                             href="/checkout/<%= customer %>/<%= product.id %>">
                             Kup teraz
                         </a>
@@ -90,7 +90,7 @@
                 <% } %>
             </div>
             <div class="w-full lg:max-w-xs flex flex-col gap-5 items-center mb-6">
-                <a href="#voucher" class="rounded-md bg-green-700 p-2 px-10 text-lg uppercase">Voucher</a>
+                <a href="#voucher" class="rounded-md bg-[#198754] p-2 px-10 text-lg uppercase">Voucher</a>
                 <div class="text-2xl font-bold mt-6">
                     OSTATNIE ZAKUPY
                 </div>
@@ -130,7 +130,7 @@
             <div class="flex flex-col md:flex-row gap-4">
                 <input type="text" id="voucher-code" class="rounded-md bg-[#1d1d1d] p-2 px-4 text-lg w-full" placeholder="Wpisz kod..." />
             </div>
-            <button class="rounded-md bg-green-700 p-2 px-10 text-lg uppercase w-full mt-6">Zrealizuj</button>
+            <button class="rounded-md bg-[#198754] p-2 px-10 text-lg uppercase w-full mt-6">Zrealizuj</button>
 
 
         </div>
@@ -143,7 +143,7 @@
             </div>
             <div>
                 Sklep zasila
-                <a href="https://shopmc.app" target="_blank" class="text-green-700 font-bold">
+                <a href="https://shopmc.app" target="_blank" class="text-[#198754] font-bold">
                     ShopMC
                 </a>
             </div>
