@@ -1,6 +1,5 @@
 require('dotenv').config()
 const express = require('express');
-const fs = require('fs')
 const app = express();
 const fetch = require('node-fetch');
 
@@ -11,7 +10,7 @@ const baseURL = process.env.BASE_URL
 
 app.get('/:template', async function (req, res) {
     const data = await fetch(`${baseURL}/api/shop/${customer}`).then(res => res.json())
-    res.render(req.params.template, { shop: data, customer, baseURL });
+    res.render(req.params.template, { shop: data });
 });
 
 app.listen(3000);
