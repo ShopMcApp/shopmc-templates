@@ -1,15 +1,17 @@
+require('dotenv').config()
 const express = require('express');
 const fs = require('fs')
 const app = express();
+const fetch = require('node-fetch');
 
-// set the view engine to ejs
 app.set('view engine', 'ejs');
 
-// use res.render to load up an ejs view file
+const customer = process.env.CUSTOMER
+const baseURL = process.env.BASE_URL
 
-// index page
-app.get('/basic', function (req, res) {
-    res.render('basic', JSON.parse(fs.readFileSync('./data.json', 'utf8')));
+app.get('/:template', async function (req, res) {
+    const data = await fetch(`${baseURL}/api/shop/${customer}`).then(res => res.json())
+    res.render(req.params.template, { shop: data, customer, baseURL });
 });
 
 app.listen(3000);
