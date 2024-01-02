@@ -7,10 +7,11 @@ app.set('view engine', 'ejs');
 
 const customer = process.env.CUSTOMER
 const baseURL = process.env.BASE_URL
+const template = process.env.TEMPLATE
 
-app.get('/basic', async function (req, res) {
+app.get('/', async function (req, res) {
     const data = await fetch(`${baseURL}/api/shop/${customer}`).then(res => res.json())
-    res.render('basic', { shop: data });
+    res.render(template, { shop: data });
 });
 
 app.listen(3000);
