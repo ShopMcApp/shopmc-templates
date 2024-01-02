@@ -25,71 +25,102 @@
 
         /* Handle */
         ::-webkit-scrollbar-thumb {
-            background: rgb(21, 128, 61);
+            background: #a3cc41;
         }
 
         /* Handle on hover */
         ::-webkit-scrollbar-thumb:hover {
-            background: rgb(21, 128, 61);
+            background: #a3cc41;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="flex justify-center bg-[#242424] text-[#cbcbcb8c] bg-cover" style="background-image: url(https://i.ibb.co/vwVFB91/cave.webp)">
+    <div class="flex justify-center bg-[#242424] text-[#cbcbcb8c] bg-cover bg-fixed"
+        style="background-image: url(https://i.ibb.co/vwVFB91/cave.webp)">
         <div class="w-full px-10 max-w-screen-lg xl:max-w-screen-xl bg-blue pt-8 min-h-screen">
             <div class="flex gap-10 text-lg items-center font-bold">
                 <a href="#">
                     <img src="<%= shop.icon %>" class="w-24 h-24">
                 </a>
                 <a href="#" class="hover:text-[#a3cc41]">
-                    Strona główna
-                </a>
-                <a href="#sklep" class="hover:text-[#a3cc41]">
                     Sklep
                 </a>
                 <a href="#regulamin" class="hover:text-[#a3cc41]">
                     Regulamin
                 </a>
             </div>
-            <div class="my-[8rem] max-w-xl">
-                <div class="text-white text-5xl font-bold leading-tight mb-4">
-                    Dołącz do świata <span class="text-[#a3cc41]"><%= shop.name %></span> już teraz!
+            <div id="main">
+                <div class="my-[8rem] max-w-xl">
+                    <div class="text-white text-5xl font-bold leading-tight mb-4">
+                        Dołącz do świata <span class="text-[#a3cc41]"><%= shop.name %></span> już teraz!
+                    </div>
+                    <div class="mb-10">
+                        <%= shop.description %>
+                    </div>
+                    <div class="flex gap-3">
+                        <button
+                            class="bg-[#a3cc41] text-[#242424] p-6 hover:opacity-[0.8] transition-all rounded-3xl text-lg font-bold">
+                            Dołącz teraz!
+                        </button>
+                        <button
+                            class="bg-[#2a2a2a] text-white p-6 hover:opacity-[0.8] transition-all rounded-3xl text-lg font-bold">
+                            Dołącz do discorda!
+                        </button>
+                    </div>
                 </div>
-                <div class="mb-10">
-                    <%= shop.description %>
-                </div>
-                <div class="flex gap-3">
-                    <button
-                        class="bg-[#a3cc41] text-[#242424] p-6 hover:opacity-[0.8] transition-all rounded-3xl text-lg font-bold">
-                        Dołącz teraz!
-                    </button>
-                    <button
-                        class="bg-[#2a2a2a] text-white p-6 hover:opacity-[0.8] transition-all rounded-3xl text-lg font-bold">
-                        Dołącz do discorda!
-                    </button>
-                </div>
-            </div>
-            <div class="border-4 border-[#2A2A2A] rounded-3xl p-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                <% for(let server of shop.servers) { %>
-                <div class="bg-[#2A2A2A] rounded-3xl p-6 flex">
-                    <div class="flex-1 flex flex-col justify-center gap-4 ml-3">
-                        <div class="text-white font-bold text-2xl">
-                            <%= server.name %>
+                <div
+                    class="border-4 border-[#2A2A2A] rounded-3xl p-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                    <% for(let server of shop.servers) { %>
+                    <div class="bg-[#2A2A2A] rounded-3xl p-6 flex">
+                        <div class="flex-1 flex flex-col justify-center gap-4 ml-3">
+                            <div class="text-white font-bold text-2xl">
+                                <%= server.name %>
+                            </div>
+                            <a class="text-lg w-fit" href="#<%= server.id %>">
+                                Przejdź do trybu
+                            </a>
                         </div>
-                        <a class="text-lg w-fit" href="#">
-                            Przejdź do trybu
-                        </a>
+                        <div class="my-auto">
+                            <img src="<%= server.icon %>" class="md:w-32 md:h-32 h-16 w-16">
+                        </div>
                     </div>
-                    <div class="my-auto">
-                        <img src="<%= server.icon %>"
-                            class="md:w-32 md:h-32 h-16 w-16">
-                    </div>
+                    <% } %>
                 </div>
-                <% } %>
             </div>
-
+            <div id="regulamin"></div>
+            <% for(let server of shop.servers) { %>
+            <div id="<%= server.id %>" class="mt-20 hidden server">
+                <a href="#"
+                    class="bg-[#2a2a2a] text-white p-5 hover:opacity-[0.8] transition-all rounded-3xl text-lg font-bold">
+                    Powrót do listy serwerów
+                </a>
+                <div class="mt-14 text-white text-4xl font-bold">
+                    Wybrałeś tryb <span class="text-[#a3cc41]"><%= server.name %></span>
+                </div>
+                <div
+                    class="mt-10 border-4 border-[#2A2A2A] rounded-3xl p-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                    <% for(let product of shop.products) { if(product.server === server.id){ %>
+                    <div class="bg-[#2A2A2A] rounded-3xl p-6 flex">
+                        <div class="flex-1 flex flex-col justify-center gap-4 ml-3">
+                            <div class="text-white font-bold text-2xl">
+                                <%= product.name %>
+                            </div>
+                            <a
+                            href="<%= shop.baseURL %>/checkout/<%= shop.customer %>/<%= product.id %>" 
+                            class="text-lg w-fit hover:text-[#a3cc41] font-bold" href="#<%= server.id %>">
+                                Kup teraz | <%= product.price %> PLN
+                            </a>
+                        </div>
+                        <div class="my-auto">
+                            <img src="<%= server.icon %>" class="md:w-32 md:h-32 h-16 w-16">
+                        </div>
+                    </div>
+                    <% } } %>
+                </div>
+            </div>
+            <% } %>
             <div class="w-full flex justify-center text-medium mt-10">
                 <div
                     class="text-center max-w-screen-2xl px-6 w-full py-14 text-gray-400 flex justify-between flex-col md:flex-row items-center">
@@ -107,22 +138,24 @@
         </div>
     </div>
     <script>
-        // const update = () => {
-        //     document.getElementById('main').classList.add('hidden')
-        //     document.getElementById('terms').classList.add('hidden')
-        //     document.getElementById('voucher').classList.add('hidden')
-        //     if (window.location.hash == '#terms') {
-        //         document.getElementById('terms').classList.remove('hidden')
-        //     } else if (window.location.hash == '#voucher') {
-        //         document.getElementById('voucher').classList.remove('hidden')
-        //     } else {
-        //         document.getElementById('main').classList.remove('hidden')
-        //     }
-        // }
-        // update()
-        // window.addEventListener('hashchange', (e) => {
-        //     update()
-        // })
+        const update = () => {
+            document.getElementById('main').classList.add('hidden')
+            document.getElementById('regulamin').classList.add('hidden')
+            for (let server of document.getElementsByClassName('server')) {
+                server.classList.add('hidden')
+            }
+            const hash = window.location.hash.split('#')[1]
+            if (document.getElementById(hash)) {
+                document.getElementById(hash).classList.remove('hidden')
+            } else {
+                document.getElementById('main').classList.remove('hidden')
+
+            }
+        }
+        update()
+        window.addEventListener('hashchange', (e) => {
+            update()
+        })
     </script>
 </body>
 
