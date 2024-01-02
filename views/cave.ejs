@@ -64,10 +64,13 @@
                             class="bg-[#a3cc41] text-[#242424] p-6 hover:opacity-[0.8] transition-all rounded-3xl text-lg font-bold">
                             Dołącz teraz!
                         </button>
-                        <button
+                        <% if(shop.discord){ %>
+                        <a
+                            href="<%= shop.discord %>"
                             class="bg-[#2a2a2a] text-white p-6 hover:opacity-[0.8] transition-all rounded-3xl text-lg font-bold">
                             Dołącz do discorda!
-                        </button>
+                        </a>
+                        <% } %>
                     </div>
                 </div>
                 <div
