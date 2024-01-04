@@ -15,8 +15,7 @@ app.get('/', async function (req, res) {
             'Cookie': `session=${session}`
         }
     }).then(res => res.json())
-    console.log(data)
-    // res.render(template, { shop: data });
+    res.render(template, { shop: data });
 });
 
 app.listen(3000);
