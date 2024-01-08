@@ -93,7 +93,9 @@
                     <% } %>
                 </div>
             </div>
-            <div id="regulamin"></div>
+            <div id="regulamin" class="text-gray-400 border-4 border-[#2A2A2A] rounded-3xl p-6 mt-10 overflow-scroll">
+                <pre><%= shop.rules %></pre>
+            </div>
             <% for(let server of shop.servers) { %>
             <div id="<%= server.id %>" class="mt-20 hidden server">
                 <a href="#"
