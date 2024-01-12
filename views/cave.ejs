@@ -79,7 +79,7 @@
                     </svg>
                     Powrót do listy serwerów
                 </a>
-                <div class="mt-14 text-white text-4xl font-bold">
+                <div class="mt-14 text-white text-3xl font-bold">
                     Wybrałeś tryb <span class="text-[#873c16]"><%= server.name %></span>
                 </div>
                 <div
@@ -103,9 +103,12 @@
                 </div>
             </div>
             <% } %>
-            <div class="my-8 text-gray-400 justify-center flex flex-wrap gap-4">
+            <div class="mt-14 text-white text-3xl font-bold">
+                Ostatnie zakupy
+            </div>
+            <div class="my-8 text-gray-400 justify-start flex flex-wrap gap-4">
                 <% if(shop.orders){ for(let order of shop.orders.slice(0,5)) { %>
-                <div class="bg-[#1d1d1d] p-5 h-fit flex gap-4 bg-[#2A2A2A] rounded-3xl px-7">
+                <div class="bg-[#1d1d1d] p-5 h-fit flex gap-4 bg-[#2A2A2A] rounded-3xl px-7 w-full md:w-fit">
                     <img src="https://minotar.net/avatar/<%= order.nick %>/48" class="w-12 h-12 my-auto rounded-xl" />
                     <div>
                         <div class="font-extrabold text-md">
