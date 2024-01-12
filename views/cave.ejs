@@ -26,7 +26,7 @@
                     Regulamin
                 </a>
             </div>
-            <div id="main" class="mb-10">
+            <div id="main">
                 <div class="my-[8rem] max-w-2xl">
                     <div class="text-white text-3xl md:text-5xl font-bold leading-tight mb-4">
                         Dołącz do świata <span class="text-[#873c16]"><%= shop.name %></span> już teraz!
@@ -67,11 +67,11 @@
                     <% } %>
                 </div>
             </div>
-            <div id="regulamin" class="text-gray-400 bg-[#2A2A2A] rounded-3xl p-6 mt-10 overflow-scroll mb-10">
+            <div id="regulamin" class="text-gray-400 bg-[#2A2A2A] rounded-3xl p-6 mt-10 overflow-scroll">
                 <pre><%= shop.rules %></pre>
             </div>
             <% for(let server of shop.servers) { %>
-            <div id="<%= server.id %>" class="mt-20 hidden server mb-10">
+            <div id="<%= server.id %>" class="mt-20 hidden server">
                 <a href="#"
                     class="bg-[#2a2a2a] p-4 hover:opacity-[0.8] transition-all rounded-3xl text-lg font-bold flex w-fit gap-2 items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
@@ -103,6 +103,28 @@
                 </div>
             </div>
             <% } %>
+            <div class="flex justify-center">
+                <div class="my-8 text-gray-400 flex flex-col gap-4">
+                    <% if(shop.orders){ for(let order of shop.orders.slice(0,5)) { %>
+                    <div class="bg-[#1d1d1d] p-4 h-fit flex gap-4 bg-[#2A2A2A] rounded-3xl">
+                        <img src="https://minotar.net/avatar/<%= order.nick %>/48" class="w-12 h-12 ml-6 my-auto rounded-xl" />
+                        <div>
+                            <div class="font-extrabold text-md">
+                                <%= order.nick %>
+                            </div>
+                            <div class="text-xs">
+                                <%= shop.products.find((p)=>p.id===order.product)?.name || 'Produkt został usunięty'  %>
+                            </div>
+                            <div class="text-xs">
+                                <%= new Date(order.timestamp).toLocaleString('pl') %>
+                            </div>
+                        </div>
+                    </div>
+                    <% } }%>
+                </div>
+            </div>
+
+
         </div>
         <div class="w-full flex justify-center text-medium text-gray-400 bg-[#2A2A2A] py-5">
             <div
