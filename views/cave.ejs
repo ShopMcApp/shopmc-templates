@@ -47,8 +47,11 @@
                         <% } %>
                     </div>
                 </div>
+                <div class="mt-14 text-white text-3xl font-bold">
+                    Wybierz tryb
+                </div>
                 <div
-                    class="border-4 border-[#2A2A2A] rounded-3xl p-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                    class="border-4 border-[#2A2A2A] rounded-3xl p-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-8">
                     <% for(let server of shop.servers) { %>
                     <a class="bg-[#2A2A2A] rounded-3xl p-6 flex min-h-[11rem] hover:opacity-[0.7] transition-all"
                         href="#<%= server.id %>">
