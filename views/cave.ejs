@@ -93,14 +93,14 @@
                     <% } %>
                 </div>
             </div>
-            <div id="regulamin" class="text-gray-400 border-4 border-[#2A2A2A] rounded-3xl p-6 mt-10 overflow-scroll">
+            <div id="regulamin" class="text-gray-400 bg-[#2A2A2A] rounded-3xl p-6 mt-10 overflow-scroll">
                 <pre><%= shop.rules %></pre>
             </div>
             <% for(let server of shop.servers) { %>
             <div id="<%= server.id %>" class="mt-20 hidden server">
                 <a href="#"
-                    class="bg-[#2a2a2a] p-5 hover:opacity-[0.8] transition-all rounded-3xl text-lg font-bold flex w-fit gap-2 items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m7.825 13l5.6 5.6L12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2z"/></svg>
+                    class="bg-[#2a2a2a] p-4 hover:opacity-[0.8] transition-all rounded-3xl text-lg font-bold flex w-fit gap-2 items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="m7.825 13l5.6 5.6L12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2z"/></svg>
                     Powrót do listy serwerów
                 </a>
                 <div class="mt-14 text-white text-4xl font-bold">
@@ -128,9 +128,9 @@
                 </div>
             </div>
             <% } %>
-            <div class="w-full flex justify-center text-medium mt-10">
+            <div class="w-full flex justify-center text-medium mt-10 text-gray-400 bg-[#2A2A2A] rounded-3xl p-0 mb-10">
                 <div
-                    class="text-center max-w-screen-2xl px-6 w-full py-14 text-gray-400 flex justify-between flex-col md:flex-row items-center">
+                    class="text-center max-w-screen-2xl px-6 w-full py-5 text-gray-400 flex justify-between flex-col md:flex-row items-center">
                     <div>
                         <%= shop.name %> nie jest w żaden sposób powiązany z Mojang AB.
                     </div>
