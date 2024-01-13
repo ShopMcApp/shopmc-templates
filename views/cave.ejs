@@ -110,7 +110,7 @@
             </div>
             <div class="my-8 text-gray-400 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <% if(shop.orders){ for(let order of shop.orders.slice(0,4)) { %>
-                <div class="bg-[#1d1d1d] p-5 h-fit flex gap-4 bg-[#2A2A2A] rounded-3xl w-full">
+                <div class="bg-[#1d1d1d] p-5 h-full flex gap-4 bg-[#2A2A2A] rounded-3xl w-full">
                     <img src="https://minotar.net/avatar/<%= order.nick %>/48" class="w-12 h-12 my-auto rounded-xl" />
                     <div>
                         <div class="font-extrabold text-lg">
