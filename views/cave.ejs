@@ -13,40 +13,53 @@
 <body>
 
     <div class="flex flex-col items-center bg-[#1a1a1a] text-[#cbcbcb8c]">
-        <div class="w-full px-10 max-w-screen-lg xl:max-w-screen-xl bg-blue pt-8 min-h-screen">
-            <div class="flex gap-6 md:gap-10 text-lg items-center font-bold text-xl">
-                <a href="#">
+        <div class="w-full px-10 max-w-screen-lg xl:max-w-screen-xl bg-blue min-h-screen">
+            <div class="flex gap-6 md:gap-10 text-lg items-center font-bold text-xl pt-12">
+                <a href="#" class="text-[#873c16] font-extrabold text-2xl">
                     <img src="<%= shop.icon %>" class="w-12 h-12 md:w-16 md:h-16 rounded-3xl">
                 </a>
                 <a href="#" class="hover:text-[#873c16]">
                     Sklep
                 </a>
-                <a href="#regulamin" class="hover:text-[#873c16]">
+                <a href="#regulamin" class="hover:text-[#873c16] flex-1">
                     Regulamin
                 </a>
+                <% if(shop.discord){ %>
+                <a href="<%= shop.discord_url %>" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z" />
+                    </svg>
+                </a>
+                <% } %>
+                <% if(shop.facebook){ %>
+                <a href="<%= shop.facebook_url %>" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" />
+                    </svg>
+                </a>
+                <% }; %>
+                <% if(shop.tiktok){ %>
+                <a href="<%= shop.tiktok_url %>" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z" />
+                    </svg>
+                </a>
+                <% } %>
             </div>
+
             <div id="main">
-                <div class="my-[8rem] max-w-2xl">
-                    <div class="text-white text-3xl md:text-5xl font-bold leading-tight mb-4">
+                <div class="my-[9rem] mt-[12rem] max-w-2xl">
+                    <div class="text-white  text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-4">
                         Dołącz do świata <span class="text-[#873c16]"><%= shop.name %></span> już teraz!
                     </div>
                     <div class="mb-10 text-lg">
                         <%= shop.description %>
                     </div>
-                    <div class="flex gap-4 flex-col md:flex-row">
-                        <button
-                            class="bg-[#873c16] text-white p-6 hover:opacity-[0.8] transition-all rounded-3xl text-lg font-bold">
-                            Dołącz teraz!
-                        </button>
-                        <% if(shop.discord){ %>
-                        <a target="_blank" href="<%= shop.discord_url %>"
-                            class="bg-[#212121] text-center text-white p-6 hover:opacity-[0.8] transition-all rounded-3xl text-lg font-bold">
-                            Dołącz do discorda!
-                        </a>
-                        <% } %>
-                    </div>
                 </div>
-                <div class="mt-14 text-white text-3xl font-bold">
+                <div class="mt-14 text-gray-300 text-3xl font-bold">
                     Wybierz tryb
                 </div>
                 <div
@@ -75,13 +88,13 @@
             <% for(let server of shop.servers) { %>
             <div id="<%= server.id %>" class="mt-20 hidden server">
                 <a href="#"
-                    class="bg-[#212121] p-4 hover:opacity-[0.8] transition-all rounded-3xl text-lg font-bold flex w-fit gap-2 items-center">
+                    class="hover:opacity-[0.8] transition-all rounded-3xl text-lg font-bold flex w-fit gap-2 items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
                         <path fill="currentColor" d="m7.825 13l5.6 5.6L12 20l-8-8l8-8l1.425 1.4l-5.6 5.6H20v2z" />
                     </svg>
                     Powrót do listy serwerów
                 </a>
-                <div class="mt-14 text-white text-3xl font-bold">
+                <div class="mt-14 text-gray-300 text-3xl font-bold">
                     Wybrałeś tryb <span class="text-[#873c16]"><%= server.name %></span>
                 </div>
                 <div
@@ -105,7 +118,7 @@
                 </div>
             </div>
             <% } %>
-            <div class="mt-14 text-white text-3xl font-bold">
+            <div class="mt-14 text-gray-300 text-3xl font-bold">
                 Ostatnie zakupy
             </div>
             <div class="my-8 text-gray-400 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
