@@ -6,4 +6,4 @@ These templates are compiled along with the store configuration, which can be pa
 |-------|--------------------------------------------------------------------------------------------------------------|
 | Basic | [https://raw.githubusercontent.com/ShopMcApp/shopmc-templates/main/views/basic.ejs](https://raw.githubusercontent.com/ShopMcApp/shopmc-templates/main/views/basic.ejs) |
 | Cave  | [https://raw.githubusercontent.com/ShopMcApp/shopmc-templates/main/views/cave.ejs](https://raw.githubusercontent.com/ShopMcApp/shopmc-templates/main/views/cave.ejs) |
-| Vepic  | [https://raw.githubusercontent.com/ShopMcApp/shopmc-templates/main/views/vepic.ejs](https://raw.githubusercontent.com/ShopMcApp/shopmc-templates/main/views/vepic.ejs) |
+| Epic  | [https://raw.githubusercontent.com/ShopMcApp/shopmc-templates/main/views/epic.ejs](https://raw.githubusercontent.com/ShopMcApp/shopmc-templates/main/views/epic.ejs) |
