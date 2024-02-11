@@ -11,9 +11,7 @@ const session = process.env.SESSION
 const template = process.env.TEMPLATE
 
 app.get('/', async function (req, res) {
-    const shop = await fetch(`${baseURL}/api/user/shop`, {
-        headers: { 'Cookie': `session=${session}` }
-    }).then(res => res.json())
+    const shop = await fetch(`${baseURL}/api/user/shop`, { headers: { 'Cookie': `session=${session}` } }).then(res => res.json())
     res.render(template, { shop });
 });
 
