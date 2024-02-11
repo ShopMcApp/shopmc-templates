@@ -104,8 +104,8 @@
                     </button>
                     <% } %>
                 </div>
-                <div class="flex gap-8">
-                    <div class="w-full max-w-lg mt-10 flex flex-col gap-5 max-h-[30rem] overflow-y-scroll pr-4">
+                <div class="flex gap-8 lg:flex-row flex-col">
+                    <div class="flex-grow mt-10 flex flex-col gap-5 max-h-[30rem] overflow-y-scroll pr-4">
                         <% for(let product of shop.products) { %>
                         <button
                             class="bg-zinc-800 h-30 rounded-3xl p-6 flex gap-4 hover:opacity-[0.7] transition-all duration-200"
@@ -122,7 +122,7 @@
                         </button>
                         <% } %>
                     </div>
-                    <div class="mt-8">
+                    <div class="mt-8 flex-grow">
                         <div class="text-3xl font-bold">SUPER VIP <span class="text-green-700 bg-zinc-800 p-1 rounded-lg">16 PLN</span></div>
                         <button
                             class="rounded-2xl bg-green-700 py-3 mt-6 px-20 px-10 text-lg uppercase hover:opacity-[0.5] transition-all duration-200">
