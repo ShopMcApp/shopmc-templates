@@ -36,7 +36,8 @@
 </head>
 
 <body>
-    <div class="min-h-screen pb-6 bg-zinc-950 text-gray-300 flex flex-col items-center sm:px-[3rem] xl:px-[9rem] px-[2rem]">
+    <div
+        class="min-h-screen pb-6 bg-zinc-950 text-gray-300 flex flex-col items-center sm:px-[3rem] xl:px-[9rem] px-[2rem]">
         <div class="w-full p-8 flex bg-zinc-900 mt-10 rounded-3xl flex items-center gap-8 uppercase text-xl font-bold ">
             <img src="<%= shop.icon %>" class="w-12 h-12 rounded-xl" />
             <a href="#" class="hover:text-green-700">Sklep</a>
@@ -87,19 +88,23 @@
             </div>
             <div class="bg-zinc-900 rounded-3xl mt-4 p-10 text-lg mb-20">
                 <div class="flex gap-5 items-center">
-                    Wybierz tryb
+                    <div class="font-bold">
+                        Wybierz tryb
+                    </div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 20 20">
                         <path fill="#888888" fill-rule="evenodd"
                             d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10"
                             clip-rule="evenodd" />
                     </svg>
                     <% for(let server of shop.servers) { %>
-                    <button class="rounded-2xl bg-green-700 p-3 px-10 text-lg uppercase">
+                    <button
+                        class="rounded-2xl border-2 border-green-700 p-3 px-10 text-lg uppercase hover:opacity-[0.5] transition-all duration-200"
+                        onclick="setServer('<%= server.id %>')">
                         <%= server.name %>
                     </button>
                     <% } %>
                 </div>
-                <div class="w-full max-w-lg mt-10 flex flex-col gap-4">
+                <div class="w-full max-w-lg mt-10 flex flex-col gap-5">
                     <% for(let product of shop.products) { %>
                     <div class="bg-zinc-800 h-30 rounded-3xl p-6 flex gap-4">
                         <img src="<%= product.icon %>" class="w-16 h-16 rounded-2xl" />
@@ -124,7 +129,8 @@
                 </svg>
             </div>
 
-            <div class="bg-zinc-900 rounded-3xl mt-4 p-10 text-lg mb-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+            <div
+                class="bg-zinc-900 rounded-3xl mt-4 p-10 text-lg mb-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
                 <% if(shop.orders){ for(let order of shop.orders) { %>
                 <div class="bg-zinc-800 p-5 h-fit flex gap-4 items-center rounded-3xl">
                     <img src="https://minotar.net/avatar/<%= order.nick %>/48" class="w-12 h-12 rounded-2xl" />
@@ -180,6 +186,9 @@
         </div>
     </div>
     <script>
+        const setServer = (id) => {
+            console.log(id)
+        }
         const update = () => {
             document.getElementById('main').classList.add('hidden')
             document.getElementById('terms').classList.add('hidden')
