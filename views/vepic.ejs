@@ -99,21 +99,19 @@
                     <% for(let server of shop.servers) { %>
                     <button
                         class="serverButton w-full md:w-fit rounded-2xl border-2 border-green-700 p-3 px-10 text-lg uppercase hover:opacity-[0.7] transition-all duration-200 <%= server.id === shop.servers[0].id ? 'bg-green-700' : '' %>"
-                        onclick="setServer('<%= server.id %>')"
-                        id="serverButton<%= server.id %>">
+                        onclick="setServer('<%= server.id %>')" id="serverButton<%= server.id %>">
                         <%= server.name %>
                     </button>
                     <% } %>
                 </div>
                 <div class="flex gap-8 lg:flex-row flex-col">
                     <% for(let server of shop.servers) { %>
-                    <div class="mt-10 flex flex-col gap-5 max-h-[30rem] overflow-y-scroll pr-4 w-full lg:w-[28rem] server <%= server.id === shop.servers[0].id ? '' : 'hidden'%>" id="<%= server.id %>">
+                    <div class="mt-10 flex flex-col gap-5 max-h-[30rem] overflow-y-scroll pr-4 w-full lg:w-[28rem] server <%= server.id === shop.servers[0].id ? '' : 'hidden'%>"
+                        id="<%= server.id %>">
                         <% for(let product of shop.products) { if(product.server === server.id){ %>
                         <button
                             class="productButton bg-zinc-800 h-30 rounded-3xl p-6 flex gap-4 hover:opacity-[0.7] transition-opacity duration-200 text-left"
-                            onclick="setProduct('<%= product.id %>')"
-                            id="productButton<%= product.id %>"
-                            >
+                            onclick="setProduct('<%= product.id %>')" id="productButton<%= product.id %>">
                             <img src="<%= product.icon %>" class="w-16 h-16 rounded-2xl" />
                             <div class="flex flex-col gap-2">
                                 <div class="text-xl font-bold">
@@ -128,18 +126,19 @@
                     </div>
                     <% } %>
                     <% for(let product of shop.products) { %>
-                    <div class="mt-8 flex-grow product <%= product.id === shop.products.find((a) => a.server === shop.servers[0].id).id ? '' : 'hidden'%>" id="<%= shop.id %>">
-                        <div class="text-3xl font-bold">SUPER VIP <span class="text-green-700 bg-zinc-800 p-1 rounded-lg">16 PLN</span></div>
+                    <div class="mt-8 flex-grow product <%= product.id === shop.products.find((a) => a.server === shop.servers[0].id).id ? '' : 'hidden'%>"
+                        id="<%= product.id %>">
+                        <div class="text-3xl font-bold">
+                            <%= product.name %>
+                            <span class="text-green-700 bg-zinc-800 p-1 rounded-lg">
+                                <%= product.price %> PLN
+                            </span>
+                        </div>
                         <button
                             class="rounded-2xl bg-green-700 py-3 mt-6 px-20 px-10 text-lg uppercase hover:opacity-[0.5] transition-all duration-200">
                             Kup teraz
                         </button>
-                        <pre class="mt-6">
-Najtańsza dostępna ranga na serwerze.
-Przywileje rangi:
-prefix VIP
-kit VIP           
-                        </pre>
+                        <pre class="mt-6"><%= product.description %></pre>
                     </div>
                     <% } %>
                 </div>
@@ -212,6 +211,10 @@ kit VIP
     </div>
     <script>
         const setProduct = (id) => {
+            for (let product of document.getElementsByClassName('product')) {
+                product.classList.add('hidden')
+            }
+            document.getElementById(id).classList.remove('hidden')
             for (let server of document.getElementsByClassName('productButton')) {
                 server.classList.add('bg-zinc-800')
                 server.classList.remove('bg-zinc-700')
