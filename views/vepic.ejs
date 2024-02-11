@@ -98,8 +98,9 @@
                     </svg>
                     <% for(let server of shop.servers) { %>
                     <button
-                        class="w-full md:w-fit rounded-2xl border-2 border-green-700 p-3 px-10 text-lg uppercase hover:opacity-[0.5] transition-all duration-200"
-                        onclick="setServer('<%= server.id %>')">
+                        class="serverButton w-full md:w-fit rounded-2xl border-2 border-green-700 p-3 px-10 text-lg uppercase hover:opacity-[0.7] transition-all duration-200"
+                        onclick="setServer('<%= server.id %>')"
+                        id="serverButton<%= server.id %>">
                         <%= server.name %>
                     </button>
                     <% } %>
@@ -109,8 +110,10 @@
                     <div class="mt-10 flex flex-col gap-5 max-h-[30rem] overflow-y-scroll pr-4 w-full lg:w-[28rem] server <%= server.id === shop.servers[0].id ? '' : 'hidden'%>" id="<%= server.id %>">
                         <% for(let product of shop.products) { if(product.server === server.id){ %>
                         <button
-                            class="bg-zinc-800 h-30 rounded-3xl p-6 flex gap-4 hover:opacity-[0.7] transition-all duration-200 text-left"
-                            onclick="setProduct('<%= product.id %>')">
+                            class="productButton bg-zinc-800 h-30 rounded-3xl p-6 flex gap-4 hover:opacity-[0.7] transition-all duration-200 text-left"
+                            onclick="setProduct('<%= product.id %>')"
+                            id="productButton<%= product.id %>"
+                            >
                             <img src="<%= product.icon %>" class="w-16 h-16 rounded-2xl" />
                             <div class="flex flex-col gap-2">
                                 <div class="text-xl font-bold">
@@ -216,6 +219,10 @@ kit VIP
             for (let server of document.getElementsByClassName('server')) {
                 server.classList.add('hidden')
             }
+            for (let server of document.getElementsByClassName('serverButton')) {
+                server.classList.remove('bg-green-700')
+            }
+            document.getElementById(`serverButton${id}`).classList.add('bg-green-700')
             document.getElementById(id).classList.remove('hidden')
         }
 
