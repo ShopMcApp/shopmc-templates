@@ -110,7 +110,7 @@
                     <div class="mt-10 flex flex-col gap-5 max-h-[30rem] overflow-y-scroll pr-4 w-full lg:w-[28rem] server <%= server.id === shop.servers[0].id ? '' : 'hidden'%>" id="<%= server.id %>">
                         <% for(let product of shop.products) { if(product.server === server.id){ %>
                         <button
-                            class="productButton border-green-700 bg-zinc-800 h-30 rounded-3xl p-6 flex gap-4 hover:opacity-[0.7] transition-opacity duration-200 text-left"
+                            class="productButton bg-zinc-800 h-30 rounded-3xl p-6 flex gap-4 hover:opacity-[0.7] transition-opacity duration-200 text-left"
                             onclick="setProduct('<%= product.id %>')"
                             id="productButton<%= product.id %>"
                             >
@@ -213,9 +213,11 @@ kit VIP
     <script>
         const setProduct = (id) => {
             for (let server of document.getElementsByClassName('productButton')) {
-                server.classList.remove('border-2')
+                server.classList.add('bg-zinc-800')
+                server.classList.remove('bg-zinc-700')
             }
-            document.getElementById(`productButton${id}`).classList.add('border-2')
+            document.getElementById(`productButton${id}`).classList.add('bg-zinc-700')
+            document.getElementById(`productButton${id}`).classList.remove('bg-zinc-800')
         }
 
         const setServer = (id) => {
