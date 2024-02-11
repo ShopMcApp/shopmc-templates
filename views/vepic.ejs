@@ -227,6 +227,9 @@
         }
 
         const setServer = (id) => {
+            for (let product of document.getElementsByClassName('product')) {
+                product.classList.add('hidden')
+            }
             for (let server of document.getElementsByClassName('server')) {
                 server.classList.add('hidden')
             }
