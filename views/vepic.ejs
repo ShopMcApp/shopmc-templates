@@ -87,7 +87,7 @@
                 </svg>
             </div>
             <div class="bg-zinc-900 rounded-3xl mt-4 p-10 text-lg mb-20">
-                <div class="flex gap-5 items-center">
+                <div class="flex gap-5 items-center flex-wrap">
                     <div class="font-bold">
                         Wybierz tryb
                     </div>
@@ -98,7 +98,7 @@
                     </svg>
                     <% for(let server of shop.servers) { %>
                     <button
-                        class="rounded-2xl border-2 border-green-700 p-3 px-10 text-lg uppercase hover:opacity-[0.5] transition-all duration-200"
+                        class="w-full md:w-fit rounded-2xl border-2 border-green-700 p-3 px-10 text-lg uppercase hover:opacity-[0.5] transition-all duration-200"
                         onclick="setServer('<%= server.id %>')">
                         <%= server.name %>
                     </button>
