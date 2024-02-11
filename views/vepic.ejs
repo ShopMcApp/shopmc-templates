@@ -134,10 +134,13 @@
                                 <%= product.price %> PLN
                             </span>
                         </div>
-                        <button
-                            class="rounded-2xl bg-green-700 py-3 mt-6 px-20 px-10 text-lg uppercase hover:opacity-[0.5] transition-all duration-200">
-                            Kup teraz
-                        </button>
+                        <div class="mt-10">
+                            <a href="<%= shop.baseURL %>/checkout/<%= shop.customer %>/<%= product.id %>"
+                                class="rounded-2xl bg-green-700 py-3 px-20 px-10 text-lg uppercase hover:opacity-[0.5] transition-all duration-200">
+                                Kup teraz
+                            </a>
+                        </div>
+                        
                         <pre class="mt-6"><%= product.description %></pre>
                     </div>
                     <% } %>
