@@ -25,25 +25,25 @@
 
         /* Handle */
         ::-webkit-scrollbar-thumb {
-            background: #4d7c0f
+            background: #4f7c3b;
         }
 
         /* Handle on hover */
         ::-webkit-scrollbar-thumb:hover {
-            background: #4d7c0f
+            background: #4f7c3b;
         }
     </style>
 </head>
 
 <body>
     <div
-        class="min-h-screen pb-6 bg-zinc-950 text-gray-300 flex flex-col items-center sm:px-[3rem] xl:px-[9rem] px-[2rem]">
+        class="min-h-screen pb-6 bg-zinc-950 text-gray-300 flex flex-col items-center sm:px-[3rem] xl:px-[10rem] px-[2rem]">
         <div
             class="w-full p-8 flex bg-zinc-900 mt-10 rounded-3xl md:flex-row flex-col items-center gap-8 uppercase text-xl font-bold ">
-            <img src="<%= shop.icon %>" class="w-12 h-12 rounded-xl" />
-            <a href="#" class="hover:text-lime-700 transition-all duration-200">Sklep</a>
-            <a href="#regulamin" class="hover:text-lime-700 transition-all duration-200">Regulamin</a>
-            <a href="#voucher" class="hover:text-lime-700 transition-all duration-200 flex-1">Voucher</a>
+            <img src="<%= shop.icon %>" class="w-12 h-12 rounded-2xl" />
+            <a href="#" class="hover:text-[#4f7c3b] transition-all duration-200">Sklep</a>
+            <a href="#regulamin" class="hover:text-[#4f7c3b] transition-all duration-200">Regulamin</a>
+            <a href="#voucher" class="hover:text-[#4f7c3b] transition-all duration-200 flex-1">Voucher</a>
             <div class="flex gap-5">
                 <% if(shop.discord){ %>
                 <a href="<%= shop.discord_url %>" target="_blank">
@@ -73,15 +73,21 @@
 
         </div>
         <div id="main" class="w-full text-center md:text-left">
-            <div class="text-4xl sm:text-5xl md:text-6xl font-bold mt-[10rem]">
-                <%= shop.name %>
+            <div class="flex md:justify-between items-center justify-center">
+                <div>
+                    <div class="text-4xl sm:text-5xl md:text-6xl font-bold mt-[10rem]">
+                        <%= shop.name %>
+                    </div>
+                    <div class="mb-10 mt-3 text-2xl text-gray-400 ">
+                        <%= shop.description %>
+                    </div>
+                    <button class="rounded-2xl bg-[#4f7c3b] py-5 my-auto px-8 text-lg uppercase mb-[10rem] hover:opacity-[0.7] transition-all duration-200 font-bold">
+                        Skopiuj adres serwera
+                    </button>
+                </div>
+                <img src="https://i.ibb.co/LQbx3rx/Slime-JE2-BE1.png" class="w-[307px] h-[341px] hidden lg:block"/>
             </div>
-            <div class="mb-10 mt-3 text-2xl text-gray-400 ">
-                <%= shop.description %>
-            </div>
-            <button class="rounded-2xl bg-lime-700 py-5 my-auto px-8 text-lg uppercase mb-[10rem] hover:opacity-[0.7] transition-all duration-200 font-bold">
-                Skopiuj adres serwera
-            </button>
+            
             <div class="flex text-gray-400 items-center gap-3 text-xl opacity-[0.7]">
                 Sklep z produktami
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 20">
@@ -102,7 +108,7 @@
                     </svg>
                     <% for(let server of shop.servers) { %>
                     <button
-                        class="font-bold serverButton w-full md:w-fit rounded-2xl border-2 border-lime-700 p-3 px-10 text-lg uppercase hover:opacity-[0.7] transition-all duration-200 <%= server.id === shop.servers[0].id ? 'bg-lime-700' : '' %>"
+                        class="font-bold serverButton w-full md:w-fit rounded-2xl border-2 border-[#4f7c3b] p-3 px-10 text-lg uppercase hover:opacity-[0.7] transition-all duration-200 <%= server.id === shop.servers[0].id ? 'bg-[#4f7c3b]' : '' %>"
                         onclick="setServer('<%= server.id %>')" id="serverButton<%= server.id %>">
                         <%= server.name %>
                     </button>
@@ -120,7 +126,7 @@
                             <div class="text-xl font-bold flex-1">
                                 <%= product.name %>
                             </div>
-                            <div class="text-xl font-bold text-lime-700 text-right">
+                            <div class="text-xl font-bold text-[#4f7c3b] text-right">
                                 <%= product.price.toFixed(2) %> PLN
                             </div>
                         </button>
@@ -135,12 +141,12 @@
                     <div class="mt-8 flex-grow product <%= product.id === shop.products.find((a) => a.server === shop.servers[0].id).id ? '' : 'hidden'%>"
                         id="<%= product.id %>">
                         <div class="text-3xl font-bold">
-                            <%= product.name %> <span class="bg-zinc-800 rounded-md p-1 text-lime-700"><%= product.price.toFixed(2) %> PLN</span>
+                            <%= product.name %> <span class="bg-zinc-800 rounded-md p-1 text-[#4f7c3b]"><%= product.price.toFixed(2) %> PLN</span>
                         </div>
                         <div class="mt-10">
                             <a target="_blank"
                                 href="<%= shop.baseURL %>/checkout/<%= shop.customer %>/<%= product.id %>"
-                                class="font-bold text-headline rounded-2xl bg-lime-700 py-4 px-16 px-10 md:text-lg uppercase hover:opacity-[0.7] transition-all duration-200">
+                                class="font-bold text-headline rounded-2xl bg-[#4f7c3b] py-4 px-16 px-10 md:text-lg uppercase hover:opacity-[0.7] transition-all duration-200">
                                 Kup teraz
                             </a>
                         </div>
@@ -199,7 +205,7 @@
                 <input type="text" id="voucher-code" class="rounded-2xl bg-zinc-800 p-3 px-4 text-lg w-full"
                     placeholder="Wpisz kod..." />
             </div>
-            <button class="rounded-2xl bg-lime-700 p-3 px-10 text-lg uppercase w-full mt-6">Zrealizuj</button>
+            <button class="rounded-2xl bg-[#4f7c3b] p-3 px-10 text-lg uppercase w-full mt-6">Zrealizuj</button>
         </div>
     </div>
     <div class="w-full bg-zinc-900 flex justify-center text-medium">
@@ -210,7 +216,7 @@
             </div>
             <div>
                 Sklep zasila
-                <a href="https://shopmc.app" target="_blank" class="text-lime-700 font-bold">
+                <a href="https://shopmc.app" target="_blank" class="text-[#4f7c3b] font-bold">
                     ShopMC
                 </a>
             </div>
@@ -238,9 +244,9 @@
                 server.classList.add('hidden')
             }
             for (let server of document.getElementsByClassName('serverButton')) {
-                server.classList.remove('bg-lime-700')
+                server.classList.remove('bg-[#4f7c3b]')
             }
-            document.getElementById(`serverButton${id}`).classList.add('bg-lime-700')
+            document.getElementById(`serverButton${id}`).classList.add('bg-[#4f7c3b]')
             document.getElementById(id).classList.remove('hidden')
         }
 
