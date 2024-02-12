@@ -25,12 +25,12 @@
 
         /* Handle */
         ::-webkit-scrollbar-thumb {
-            background: rgb(21, 128, 61);
+            background: #4d7c0f
         }
 
         /* Handle on hover */
         ::-webkit-scrollbar-thumb:hover {
-            background: rgb(21, 128, 61);
+            background: #4d7c0f
         }
     </style>
 </head>
@@ -41,9 +41,9 @@
         <div
             class="w-full p-8 flex bg-zinc-900 mt-10 rounded-3xl md:flex-row flex-col items-center gap-8 uppercase text-xl font-bold ">
             <img src="<%= shop.icon %>" class="w-12 h-12 rounded-xl" />
-            <a href="#" class="hover:text-green-700 transition-all duration-200">Sklep</a>
-            <a href="#regulamin" class="hover:text-green-700 transition-all duration-200">Regulamin</a>
-            <a href="#voucher" class="hover:text-green-700 transition-all duration-200 flex-1">Voucher</a>
+            <a href="#" class="hover:text-lime-700 transition-all duration-200">Sklep</a>
+            <a href="#regulamin" class="hover:text-lime-700 transition-all duration-200">Regulamin</a>
+            <a href="#voucher" class="hover:text-lime-700 transition-all duration-200 flex-1">Voucher</a>
             <div class="flex gap-5">
                 <% if(shop.discord){ %>
                 <a href="<%= shop.discord_url %>" target="_blank">
@@ -79,7 +79,7 @@
             <div class="mb-10 mt-3 text-2xl text-gray-400 ">
                 <%= shop.description %>
             </div>
-            <button class="rounded-2xl bg-green-700 py-5 my-auto px-8 text-lg uppercase mb-[10rem]">
+            <button class="rounded-2xl bg-lime-700 py-5 my-auto px-8 text-lg uppercase mb-[10rem]">
                 Skopiuj adres serwera
             </button>
             <div class="flex text-gray-400 items-center gap-3 text-xl opacity-[0.7]">
@@ -102,7 +102,7 @@
                     </svg>
                     <% for(let server of shop.servers) { %>
                     <button
-                        class="serverButton w-full md:w-fit rounded-2xl border-2 border-green-700 p-3 px-10 text-lg uppercase hover:opacity-[0.7] transition-all duration-200 <%= server.id === shop.servers[0].id ? 'bg-green-700' : '' %>"
+                        class="serverButton w-full md:w-fit rounded-2xl border-2 border-lime-700 p-3 px-10 text-lg uppercase hover:opacity-[0.7] transition-all duration-200 <%= server.id === shop.servers[0].id ? 'bg-lime-700' : '' %>"
                         onclick="setServer('<%= server.id %>')" id="serverButton<%= server.id %>">
                         <%= server.name %>
                     </button>
@@ -120,7 +120,7 @@
                             <div class="text-xl font-bold flex-1">
                                 <%= product.name %>
                             </div>
-                            <div class="text-xl font-bold text-green-700 text-right">
+                            <div class="text-xl font-bold text-lime-700 text-right">
                                 <%= product.price.toFixed(2) %> PLN
                             </div>
                         </button>
@@ -140,12 +140,12 @@
                         <div class="mt-10">
                             <a target="_blank"
                                 href="<%= shop.baseURL %>/checkout/<%= shop.customer %>/<%= product.id %>"
-                                class="text-headline rounded-2xl bg-green-700 py-4 px-16 px-10 md:text-lg uppercase hover:opacity-[0.7] transition-all duration-200">
+                                class="text-headline rounded-2xl bg-lime-700 py-4 px-16 px-10 md:text-lg uppercase hover:opacity-[0.7] transition-all duration-200">
                                 Zakup <%= product.price.toFixed(2) %> PLN
                             </a>
                         </div>
 
-                        <pre class="mt-6 overflow-auto text-wrap w-[30rem]"><%= product.description %></pre>
+                        <pre class="mt-6 overflow-auto"><%= product.description %></pre>
                     </div>
                     <% } %>
                 </div>
@@ -184,22 +184,22 @@
         </div>
         <div id="voucher" class="hidden w-full max-w-lg mt-12 bg-zinc-900 p-12 rounded-3xl">
             <div class="text-3xl font-bold uppercase text-center">Zrealizuj voucher</div>
-            <div class="text-xl font-bold mt-6 mb-1 opacity-[0.7]">
+            <div class="text-lg font-bold mt-6 mb-1 opacity-[0.7]">
                 Nick z gry
             </div>
             <div class="flex flex-col md:flex-row gap-4">
-                <input type="text" id="voucher-nick" class="rounded-xl bg-zinc-800 p-3 px-4 text-lg w-full"
+                <input type="text" id="voucher-nick" class="rounded-2xl bg-zinc-800 p-3 px-4 text-lg w-full"
                     placeholder="Wpisz nick..." />
 
             </div>
-            <div class="text-xl font-bold mt-6 mb-1 opacity-[0.7]">
+            <div class="text-lg font-bold mt-6 mb-1 opacity-[0.7]">
                 Kod vouchera
             </div>
             <div class="flex flex-col md:flex-row gap-4">
-                <input type="text" id="voucher-code" class="rounded-xl bg-zinc-800 p-3 px-4 text-lg w-full"
+                <input type="text" id="voucher-code" class="rounded-2xl bg-zinc-800 p-3 px-4 text-lg w-full"
                     placeholder="Wpisz kod..." />
             </div>
-            <button class="rounded-xl bg-green-700 p-3 px-10 text-lg uppercase w-full mt-6">Zrealizuj</button>
+            <button class="rounded-2xl bg-lime-700 p-3 px-10 text-lg uppercase w-full mt-6">Zrealizuj</button>
         </div>
     </div>
     <div class="w-full bg-zinc-900 flex justify-center text-medium">
@@ -210,7 +210,7 @@
             </div>
             <div>
                 Sklep zasila
-                <a href="https://shopmc.app" target="_blank" class="text-green-700 font-bold">
+                <a href="https://shopmc.app" target="_blank" class="text-lime-700 font-bold">
                     ShopMC
                 </a>
             </div>
@@ -238,9 +238,9 @@
                 server.classList.add('hidden')
             }
             for (let server of document.getElementsByClassName('serverButton')) {
-                server.classList.remove('bg-green-700')
+                server.classList.remove('bg-lime-700')
             }
-            document.getElementById(`serverButton${id}`).classList.add('bg-green-700')
+            document.getElementById(`serverButton${id}`).classList.add('bg-lime-700')
             document.getElementById(id).classList.remove('hidden')
         }
 
