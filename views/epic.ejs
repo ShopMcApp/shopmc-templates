@@ -41,9 +41,9 @@
         <div
             class="w-full p-8 flex bg-zinc-900 mt-10 rounded-3xl md:flex-row flex-col items-center gap-8 uppercase text-xl font-bold ">
             <img src="<%= shop.icon %>" class="w-12 h-12 rounded-xl" />
-            <a href="#" class="hover:text-green-700">Sklep</a>
-            <a href="#terms" class="hover:text-green-700">Regulamin</a>
-            <a href="#voucher" class="hover:text-green-700 flex-1">Voucher</a>
+            <a href="#" class="hover:text-green-700 transition-all duration-200">Sklep</a>
+            <a href="#regulamin" class="hover:text-green-700 transition-all duration-200">Regulamin</a>
+            <a href="#voucher" class="hover:text-green-700 transition-all duration-200 flex-1">Voucher</a>
             <div class="flex gap-5">
                 <% if(shop.discord){ %>
                 <a href="<%= shop.discord_url %>" target="_blank">
@@ -114,7 +114,7 @@
                         id="<%= server.id %>">
                         <% for(let product of shop.products) { if(product.server === server.id){ %>
                         <button
-                            class="productButton bg-zinc-800 h-30 rounded-3xl p-6 flex gap-4 hover:opacity-[0.7] transition-opacity duration-200 text-left"
+                            class="productButton <%= product.id === shop.products.find((a) => a.server === shop.servers[0].id).id ? 'bg-zinc-700' : 'bg-zinc-800' %> h-30 rounded-3xl p-6 flex gap-4 hover:opacity-[0.7] transition-opacity duration-200 text-left"
                             onclick="setProduct('<%= product.id %>')" id="productButton<%= product.id %>">
                             <img src="<%= product.icon %>" class="w-16 h-16 rounded-2xl" />
                             <div class="flex flex-col gap-2">
@@ -176,7 +176,7 @@
             </div>
         </div>
 
-        <div id="terms" class="hidden md:p-12 p-8 bg-zinc-900 w-full rounded-3xl mt-10 overflow-scroll">
+        <div id="regulamin" class="hidden md:p-12 p-8 bg-zinc-900 w-full rounded-3xl mt-10 overflow-scroll">
             <pre><%= shop.rules %></pre>
         </div>
         <div id="voucher" class="hidden w-full max-w-lg mt-12 bg-zinc-900 p-12 rounded-3xl">
@@ -228,9 +228,6 @@
         }
 
         const setServer = (id) => {
-            for (let product of document.getElementsByClassName('product')) {
-                product.classList.add('hidden')
-            }
             for (let server of document.getElementsByClassName('server')) {
                 server.classList.add('hidden')
             }
@@ -243,10 +240,10 @@
 
         const update = () => {
             document.getElementById('main').classList.add('hidden')
-            document.getElementById('terms').classList.add('hidden')
+            document.getElementById('regulamin').classList.add('hidden')
             document.getElementById('voucher').classList.add('hidden')
-            if (window.location.hash == '#terms') {
-                document.getElementById('terms').classList.remove('hidden')
+            if (window.location.hash == '#regulamin') {
+                document.getElementById('regulamin').classList.remove('hidden')
             } else if (window.location.hash == '#voucher') {
                 document.getElementById('voucher').classList.remove('hidden')
             } else {
