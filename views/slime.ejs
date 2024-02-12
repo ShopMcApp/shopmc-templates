@@ -81,13 +81,14 @@
                     <div class="mb-10 mt-3 text-2xl text-gray-400 ">
                         <%= shop.description %>
                     </div>
-                    <button class="rounded-2xl bg-[#4f7c3b] py-5 my-auto px-8 text-lg uppercase mb-[10rem] hover:opacity-[0.7] transition-all duration-200 font-bold">
+                    <button
+                        class="rounded-2xl bg-[#4f7c3b] py-5 my-auto px-8 text-lg uppercase mb-[10rem] hover:opacity-[0.7] transition-all duration-200 font-bold">
                         Skopiuj adres serwera
                     </button>
                 </div>
-                <img src="https://i.ibb.co/LQbx3rx/Slime-JE2-BE1.png" class="w-[307px] h-[341px] hidden lg:block"/>
+                <img src="https://i.ibb.co/LQbx3rx/Slime-JE2-BE1.png" class="w-[307px] h-[341px] hidden lg:block" />
             </div>
-            
+
             <div class="flex text-gray-400 items-center gap-3 text-xl opacity-[0.7]">
                 Sklep z produktami
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 20">
@@ -138,10 +139,11 @@
                     </div>
                     <% } %>
                     <% for(let product of shop.products) { %>
-                    <div class="mt-8 flex-grow product hidden"
-                        id="<%= product.id %>">
+                    <div class="mt-8 flex-grow product hidden" id="<%= product.id %>">
                         <div class="text-3xl font-bold">
-                            <%= product.name %> <span class="bg-zinc-800 rounded-md p-1 text-[#4f7c3b]"><%= product.price.toFixed(2) %> PLN</span>
+                            <%= product.name %> <span
+                                class="bg-zinc-800 rounded-md p-1 text-[#4f7c3b]"><%= product.price.toFixed(2) %>
+                                PLN</span>
                         </div>
                         <div class="mt-10">
                             <a target="_blank"
@@ -237,9 +239,13 @@
         }
 
         const setServer = (id) => {
-            // for (let product of document.getElementsByClassName('product')) {
-            //     product.classList.add('hidden')
-            // }
+            for (let product of document.getElementsByClassName('product')) {
+                product.classList.add('hidden')
+            }
+            for (let server of document.getElementsByClassName('productButton')) {
+                server.classList.add('bg-zinc-800')
+                server.classList.remove('bg-zinc-700')
+            }
             for (let server of document.getElementsByClassName('server')) {
                 server.classList.add('hidden')
             }
