@@ -102,7 +102,7 @@
                     </svg>
                     <% for(let server of shop.servers) { %>
                     <button
-                        class="serverButton w-full md:w-fit rounded-2xl border-2 border-lime-700 p-3 px-10 text-lg uppercase hover:opacity-[0.7] transition-all duration-200 <%= server.id === shop.servers[0].id ? 'bg-lime-700' : '' %>"
+                        class="font-bold serverButton w-full md:w-fit rounded-2xl border-2 border-lime-700 p-3 px-10 text-lg uppercase hover:opacity-[0.7] transition-all duration-200 <%= server.id === shop.servers[0].id ? 'bg-lime-700' : '' %>"
                         onclick="setServer('<%= server.id %>')" id="serverButton<%= server.id %>">
                         <%= server.name %>
                     </button>
@@ -135,13 +135,13 @@
                     <div class="mt-8 flex-grow product <%= product.id === shop.products.find((a) => a.server === shop.servers[0].id).id ? '' : 'hidden'%>"
                         id="<%= product.id %>">
                         <div class="text-3xl font-bold">
-                            <%= product.name %>
+                            <%= product.name %> <span class="bg-zinc-800 rounded-md p-1 text-lime-700"><%= product.price.toFixed(2) %> PLN</span>
                         </div>
                         <div class="mt-10">
                             <a target="_blank"
                                 href="<%= shop.baseURL %>/checkout/<%= shop.customer %>/<%= product.id %>"
-                                class="text-headline rounded-2xl bg-lime-700 py-4 px-16 px-10 md:text-lg uppercase hover:opacity-[0.7] transition-all duration-200">
-                                Zakup <%= product.price.toFixed(2) %> PLN
+                                class="font-bold text-headline rounded-2xl bg-lime-700 py-4 px-16 px-10 md:text-lg uppercase hover:opacity-[0.7] transition-all duration-200">
+                                Kup teraz
                             </a>
                         </div>
 
