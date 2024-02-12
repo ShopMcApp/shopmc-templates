@@ -110,9 +110,9 @@
                 </div>
                 <div class="flex gap-8 lg:flex-row flex-col">
                     <% for(let server of shop.servers) { %>
-                    <div class="mt-10 flex flex-col gap-5 max-h-[30rem] overflow-y-scroll pr-4 w-full lg:w-[28rem] server <%= server.id === shop.servers[0].id ? '' : 'hidden'%>"
+                    <div class="mt-10 flex flex-col gap-5 max-h-[30rem] overflow-y-scroll pr-2 w-full lg:w-[28rem] server <%= server.id === shop.servers[0].id ? '' : 'hidden'%>"
                         id="<%= server.id %>">
-                        <% for(let product of shop.products) { if(product.server === server.id){ %>
+                        <% if(shop.products.filter((p)=>p.server===server.id).length>0) { for(let product of shop.products) { if(product.server === server.id){ %>
                         <button
                             class="productButton <%= product.id === shop.products.find((a) => a.server === shop.servers[0].id).id ? 'bg-zinc-700' : 'bg-zinc-800' %> h-30 rounded-3xl p-6 flex gap-4 hover:opacity-[0.7] transition-opacity duration-200 text-left"
                             onclick="setProduct('<%= product.id %>')" id="productButton<%= product.id %>">
@@ -126,7 +126,11 @@
                                 </div>
                             </div>
                         </button>
-                        <% } } %>
+                        <% } } } else { %>
+                        <div class="text-xl font-bold text-center my-auto">
+                            Brak produktów
+                        </div>
+                        <% } %>
                     </div>
                     <% } %>
                     <% for(let product of shop.products) { %>
@@ -136,7 +140,8 @@
                             <%= product.name %>
                         </div>
                         <div class="mt-10">
-                            <a target="_blank" href="<%= shop.baseURL %>/checkout/<%= shop.customer %>/<%= product.id %>"
+                            <a target="_blank"
+                                href="<%= shop.baseURL %>/checkout/<%= shop.customer %>/<%= product.id %>"
                                 class="rounded-2xl bg-green-700 py-3 px-16 px-10 text-lg uppercase hover:opacity-[0.7] transition-all duration-200">
                                 Zakup | <%= product.price %> PLN
                             </a>
@@ -163,7 +168,7 @@
                 <% if(shop.orders){ for(let order of shop.orders) { %>
                 <div class="bg-zinc-800 p-5 h-fit flex gap-4 items-center rounded-3xl">
                     <img src="https://minotar.net/avatar/<%= order.nick %>/48" class="w-12 h-12 rounded-2xl" />
-                    <div>
+                    <div class="text-left">
                         <div class="font-extrabold text-lg">
                             <%= order.nick %>
                         </div>
